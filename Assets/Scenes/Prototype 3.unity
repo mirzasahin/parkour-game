@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -245,12 +245,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 800
+  doubleJumpForce: 400
   gravityModifier: 2.5
   expolosionParticle: {fileID: 2098524714}
   dirtParticle: {fileID: 409790942}
   jumpSound: {fileID: 8300000, guid: 113ee460fadc340e4957a7404a9fbb27, type: 3}
   crashSound: {fileID: 8300000, guid: 4bcde6de2166e41e284ec46d8a01fb90, type: 3}
   gameOver: 0
+  doubleJumpActive: 0
 --- !u!65 &442135382
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -878,7 +880,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1568479039}
-  - component: {fileID: 1568479038}
+  - component: {fileID: 1568479040}
   m_Layer: 0
   m_Name: SpawnManager
   m_TagString: Untagged
@@ -886,19 +888,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1568479038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1568479037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cba762e230a5c4468265d64d4fc9105, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 8709779273653896575, guid: 7da7ee281575b4248abde83421f1550b, type: 3}
 --- !u!4 &1568479039
 Transform:
   m_ObjectHideFlags: 0
@@ -914,6 +903,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1568479040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568479037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cba762e230a5c4468265d64d4fc9105, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstaclePrefab:
+  - {fileID: 7105391997615308671, guid: 02f86a1348f6bea4d8e17767bc3d566e, type: 3}
+  - {fileID: 1582283845498764705, guid: f2d5ef3fd1076764995026b84f871a69, type: 3}
+  - {fileID: 8731103016421700654, guid: dee053a8b6a27234f8cffe432233bc52, type: 3}
+  - {fileID: 418815538486601106, guid: 1d02d188cf32ce041b999acefb6ab783, type: 3}
+  - {fileID: 7244209791857708703, guid: 9233713de17d4ca40b40c7964e724b28, type: 3}
+  - {fileID: 8343238303518199730, guid: 3dc02e6bc82e8084d8118db895e36a4e, type: 3}
+  - {fileID: 8872504337826062084, guid: 464c9c805341c7a4fb90f9087232428f, type: 3}
+  - {fileID: 8782675945574496545, guid: abe28d7e6e81fd0458973cfac585eb76, type: 3}
+  - {fileID: 7736585463351114422, guid: 03e55ef2d4906a74d96dbb68799dd6e6, type: 3}
+  - {fileID: 6152644483234779048, guid: 7473b9d0997abb941ad7424d22cbd598, type: 3}
 --- !u!1001 &1933107402
 PrefabInstance:
   m_ObjectHideFlags: 0

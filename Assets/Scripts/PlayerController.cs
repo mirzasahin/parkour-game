@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody playerRb;
-    public float jumpForce = 10;
+    public float jumpForce;
+    public float doubleJumpForce;
     public float gravityModifier;
     private Animator playerAnim;
     public ParticleSystem expolosionParticle;
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isOnGround = true;
     public bool gameOver;
+    public bool doubleJumpActive;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +38,15 @@ public class PlayerController : MonoBehaviour
             isOnGround = false;
             playerAnim.SetTrigger("Jump_trig");
             dirtParticle.Stop();
+            playerAudio.PlayOneShot(jumpSound, 1.0f);
+            doubleJumpActive = true;
+        }
+
+        else if (Input.GetKeyDown(KeyCode.Space) && !isOnGround && doubleJumpActive)
+        {
+            doubleJumpActive = false;
+            playerRb.AddForce(Vector3.up * doubleJumpForce, ForceMode.Impulse);
+            playerAnim.Play("Running_Jump", 3, 0f);
             playerAudio.PlayOneShot(jumpSound, 1.0f);
         }
     }
